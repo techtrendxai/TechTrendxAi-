@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechTrendxAi - AI Chatbots & Automation Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#0070f3',secondary:'#00c7b7'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #0070f3;
+        }
+        .custom-checkbox {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 4px;
+            position: relative;
+            cursor: pointer;
+        }
+        .custom-checkbox:checked {
+            background-color: #0070f3;
+            border-color: #0070f3;
+        }
+        .custom-checkbox:checked::after {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            width: 6px;
+            height: 12px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .pricing-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-['Pacifico'] text-primary">TechTrendxAi</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-gray-700 hover:text-primary font-medium">Services</a>
+                    <a href="#why-us" class="text-gray-700 hover:text-primary font-medium">Why Choose Us</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-primary font-medium">Pricing</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary font-medium">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary font-medium">Contact</a>
+                    <button class="bg-primary text-white px-5 py-2 rounded-button font-medium hover:bg-blue-600 transition whitespace-nowrap">Book Demo</button>
+                </div>
+                <div class="flex md:hidden items-center">
+                    <button id="mobile-menu-button" class="w-10 h-10 flex items-center justify-center text-gray-700">
+                        <i class="ri-menu-line ri-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Services</a>
+                <a href="#why-us" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Why Choose Us</a>
+                <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Pricing</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">About</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Contact</a>
+                <button class="mt-2 w-full bg-primary text-white px-5 py-2 rounded-button font-medium hover:bg-blue-600 transition whitespace-nowrap">Book Demo</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center pt-16 overflow-hidden">
+        <div class="absolute inset-0 w-full h-full" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20tech%20workspace%20with%20futuristic%20AI%20visualization%2C%20digital%20interfaces%20with%20data%20flows%20and%20automation%20processes%2C%20clean%20minimal%20office%20environment%20with%20blue%20lighting%20accents%2C%20high-tech%20atmosphere%2C%20professional%20setting%2C%20no%20people%2C%20wide%20angle%20view&width=1920&height=1080&seq=hero1&orientation=landscape'); background-size: cover; background-position: center;"></div>
+        <div class="absolute inset-0 hero-gradient"></div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">Supercharge Your Business with AI Chatbots & Automations</h1>
+                <p class="text-xl md:text-2xl text-gray-100 mb-8">Unlock 24/7 customer support, streamline operations, and boost conversions with our custom AI solutions for e-commerce and real estate.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-primary text-white px-8 py-3 rounded-button font-medium text-lg hover:bg-blue-600 transition whitespace-nowrap">Get Started</button>
+                    <button class="bg-white text-gray-800 px-8 py-3 rounded-button font-medium text-lg hover:bg-gray-100 transition whitespace-nowrap">Book Demo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our AI-Powered Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Custom solutions designed to automate your business processes and enhance customer experiences.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- E-commerce AI Chatbots -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <div class="h-64 bg-blue-50 flex items-center justify-center">
+                        <img src="https://readdy.ai/api/search-image?query=e-commerce%20chatbot%20interface%20with%20product%20recommendations%2C%20shopping%20cart%20visualization%2C%20modern%20minimal%20design%20with%20blue%20accent%20colors%2C%20digital%20assistant%20helping%20with%20online%20shopping%2C%20clean%20white%20background%20with%20subtle%20tech%20elements&width=600&height=400&seq=ecomm1&orientation=landscape" alt="E-commerce AI Chatbot" class="h-full w-full object-cover object-top">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full text-primary">
+                                <i class="ri-shopping-cart-line ri-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 ml-4">E-commerce AI Chatbots</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6">Smart conversational AI that helps your customers find products, track orders, and get support 24/7.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">Personalized product recommendations</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">Automated order tracking and updates</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">Instant customer support and FAQ handling</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">Abandoned cart recovery automation</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Real Estate AI Chatbots -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <div class="h-64 bg-blue-50 flex items-center justify-center">
+                        <img src="https://readdy.ai/api/search-image?query=real%20estate%20chatbot%20interface%20showing%20property%20listings%20and%20appointment%20scheduling%2C%20modern%20minimal%20design%20with%20blue%20accent%20colors%2C%20digital%20assistant%20for%20home%20buying%2C%20clean%20white%20background%20with%20subtle%20tech%20elements&width=600&height=400&seq=realestate1&orientation=landscape" alt="Real Estate AI Chatbot" class="h-full w-full object-cover object-top">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full text-primary">
+                                <i class="ri-home-line ri-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 ml-4">Real Estate AI Chatbots</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6">Intelligent virtual assistants that qualify leads, schedule viewings, and answer property inquiries instantly.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">Automated lead qualification and scoring</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">24/7 property information and virtual tours</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">Seamless appointment scheduling system</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">Automated follow-ups and nurturing</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose TechTrendxAi</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We deliver AI solutions that drive real business results without the complexity.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Cost-effective -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-6">
+                        <i class="ri-money-dollar-circle-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Cost-effective</h3>
+                    <p class="text-gray-600">Save up to 80% on customer service costs while improving response times and satisfaction rates.</p>
+                </div>
+                
+                <!-- 24/7 AI Support -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-6">
+                        <i class="ri-24-hours-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">24/7 AI Support</h3>
+                    <p class="text-gray-600">Never miss a customer inquiry again with always-on AI assistants that handle questions instantly.</p>
+                </div>
+                
+                <!-- No Coding Required -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-6">
+                        <i class="ri-code-box-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">No Coding Required</h3>
+                    <p class="text-gray-600">Our no-code platform makes it easy to create, deploy and manage sophisticated AI chatbots.</p>
+                </div>
+                
+                <!-- Fast Delivery -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-full text-primary mb-6">
+                        <i class="ri-rocket-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Fast Delivery</h3>
+                    <p class="text-gray-600">Get your AI chatbot up and running in days, not months, with our streamlined implementation process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Simple, Transparent Pricing</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Choose the plan that works best for your business needs.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Starter Plan -->
+                <div class="pricing-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Starter</h3>
+                        <div class="flex items-baseline mb-6">
+                            <span class="text-3xl font-bold text-gray-900">Free Trial</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">1 AI chatbot</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">Basic automation flows</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">Community support</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">500 conversations/month</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-gray-300 mt-0.5">
+                                    <i class="ri-close-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-400">Advanced analytics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-gray-300 mt-0.5">
+                                    <i class="ri-close-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-400">API integrations</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-gray-100 text-gray-800 px-6 py-3 rounded-button font-medium hover:bg-gray-200 transition whitespace-nowrap">Start Free Trial</button>
+                    </div>
+                </div>
+                
+                <!-- Pro Plan -->
+                <div class="pricing-card bg-white rounded-lg shadow-xl overflow-hidden border-2 border-primary transform scale-105">
+                    <div class="bg-primary text-white py-2 text-center text-sm font-medium">
+                        MOST POPULAR
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Pro</h3>
+                        <div class="flex items-baseline mb-6">
+                            <span class="text-3xl font-bold text-gray-900">$49</span>
+                            <span class="text-gray-600 ml-1">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">Up to 5 AI chatbots</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">Advanced automation flows</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">Email & chat support</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">5,000 conversations/month</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">Advanced analytics dashboard</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">3rd party integrations</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-blue-600 transition whitespace-nowrap">Get Started</button>
+                    </div>
+                </div>
+                
+                <!-- Agency Plan -->
+                <div class="pricing-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Agency</h3>
+                        <div class="flex items-baseline mb-6">
+                            <span class="text-3xl font-bold text-gray-900">$149</span>
+                            <span class="text-gray-600 ml-1">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">Unlimited AI chatbots</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">Custom automation workflows</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">Priority support</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">Unlimited conversations</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">White-labeling options</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+                                    <i class="ri-check-line ri-lg"></i>
+                                </div>
+                                <span class="ml-2 text-gray-700">Custom API development</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-gray-800 text-white px-6 py-3 rounded-button font-medium hover:bg-gray-700 transition whitespace-nowrap">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About TechTrendxAi</h2>
+                        <p class="text-lg text-gray-600 mb-6">We're a remote-first, tech-driven team of AI specialists, developers, and automation experts passionate about helping businesses leverage artificial intelligence.</p>
+                        <p class="text-lg text-gray-600 mb-6">Founded in 2023, we've helped over 200+ businesses across e-commerce and real estate sectors implement AI solutions that drive measurable results.</p>
+                        <div class="flex items-center space-x-6 mt-8">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary mb-1">200+</div>
+                                <div class="text-sm text-gray-600">Clients</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary mb-1">15+</div>
+                                <div class="text-sm text-gray-600">Countries</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary mb-1">98%</div>
+                                <div class="text-sm text-gray-600">Satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://readdy.ai/api/search-image?query=diverse%20remote%20team%20working%20on%20AI%20technology%2C%20professional%20tech%20team%20collaborating%20virtually%2C%20modern%20workspace%20with%20multiple%20screens%20showing%20data%20and%20code%2C%20clean%20minimal%20office%20environment%20with%20blue%20accent%20lighting&width=600&height=500&seq=team1&orientation=portrait" alt="Our Team" class="rounded-lg shadow-lg w-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Let AI Work for You — Get Started in Minutes</h2>
+            <p class="text-xl max-w-3xl mx-auto mb-10">Join hundreds of businesses already using our AI chatbots to boost sales, save time, and delight customers.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="bg-white text-blue-700 px-8 py-3 rounded-button font-medium text-lg hover:bg-gray-100 transition whitespace-nowrap">Get Started</button>
+                <button class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-button font-medium text-lg hover:bg-white/10 transition whitespace-nowrap">Book Demo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Get in Touch</h2>
+                        <p class="text-lg text-gray-600 mb-8">Have questions about our AI solutions? Fill out the form and our team will get back to you within 24 hours.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary shrink-0">
+                                    <i class="ri-mail-line ri-lg"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Email Us</h3>
+                                    <p class="text-gray-600">info@techtrendxai.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary shrink-0">
+                                    <i class="ri-customer-service-line ri-lg"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Support</h3>
+                                    <p class="text-gray-600">support@techtrendxai.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary shrink-0">
+                                    <i class="ri-global-line ri-lg"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Locations</h3>
+                                    <p class="text-gray-600">Remote-first with team members across North America, Europe, and Asia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <form>
+                            <div class="space-y-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                                    <input type="text" id="name" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-primary" placeholder="Your name">
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                    <input type="email" id="email" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-primary" placeholder="your.email@example.com">
+                                </div>
+                                
+                                <div>
+                                    <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
+                                    <input type="text" id="company" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-primary" placeholder="Your company name">
+                                </div>
+                                
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                    <textarea id="message" rows="4" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-primary" placeholder="Tell us about your needs..."></textarea>
+                                </div>
+                                
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="consent" class="custom-checkbox">
+                                    <label for="consent" class="ml-3 text-sm text-gray-600">I agree to receive communications from TechTrendxAi.</label>
+                                </div>
+                                
+                                <button type="submit" class="w-full bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-blue-600 transition whitespace-nowrap">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <a href="#" class="text-2xl font-['Pacifico'] text-white mb-6 block">TechTrendxAi</a>
+                    <p class="text-gray-400 mb-6">AI-powered chatbots and automation solutions for e-commerce and real estate businesses.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+                            <i class="ri-linkedin-fill ri-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+                            <i class="ri-twitter-x-fill ri-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+                            <i class="ri-facebook-fill ri-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+                            <i class="ri-instagram-fill ri-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">E-commerce Chatbots</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Real Estate Chatbots</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Custom AI Solutions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Workflow Automation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Integration Services</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Company</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Press</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Legal</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">GDPR Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-500">© 2025 TechTrendxAi. All rights reserved.</p>
+                <div class="flex justify-center mt-6 space-x-4">
+                    <i class="ri-visa-fill ri-lg text-gray-400"></i>
+                    <i class="ri-mastercard-fill ri-lg text-gray-400"></i>
+                    <i class="ri-paypal-fill ri-lg text-gray-400"></i>
+                    <i class="ri-apple-fill ri-lg text-gray-400"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script id="mobile-menu-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+
+    <script id="form-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            const checkbox = document.getElementById('consent');
+            
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const company = document.getElementById('company').value;
+                    const message = document.getElementById('message').value;
+                    
+                    if (!name || !email || !message) {
+                        alert('Please fill in all required fields.');
+                        return;
+                    }
+                    
+                    // Simulate form submission
+                    alert('Thank you for your message! We will get back to you shortly.');
+                    form.reset();
+                });
+            }
+            
+            if (checkbox) {
+                checkbox.addEventListener('change', function() {
+                    // Custom checkbox styling is handled by CSS
+                });
+            }
+        });
+    </script>
+
+    <script id="scroll-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // Account for fixed header
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add active class to nav items on scroll
+            const sections = document.querySelectorAll('section[id]');
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.scrollY + 100;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        document.querySelectorAll('nav a').forEach(link => {
+                            link.classList.remove('text-primary');
+                            if (link.getAttribute('href') === '#' + sectionId) {
+                                link.classList.add('text-primary');
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
